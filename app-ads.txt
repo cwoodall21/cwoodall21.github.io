@@ -121,3 +121,4 @@ bluexad.ai, 1996418805747683328, RESELLER
 rubiconproject.com, 24600, RESELLER, 0bfd66d529a55807
 voisetech.com, 1066, RESELLER
 indexexchange.com, 214183, RESELLER, 50b1c356f2c5c8fc
+vungle.com, 6a8b5db26747e38202f957ed, DIRECT, c107d686becd2d77
