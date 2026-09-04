@@ -3,33 +3,115 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Color Pop</title>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      max-width: 720px;
-      margin: 48px auto;
-      padding: 0 24px;
-      color: #1a1a1a;
-      line-height: 1.7;
-    }
-    h1 { font-size: 1.8rem; margin-bottom: 4px; }
-    h2 { font-size: 1.1rem; margin-top: 36px; }
-    p, li { font-size: 0.97rem; }
-    ul { padding-left: 20px; }
-    a { color: #0070f3; }
-  </style>
+  <title>Color Pop: Balloon Burst</title>
+  <link rel="icon" href="assets/app-icon.png">
+  <link rel="stylesheet" href="assets/colorpop-theme.css">
 </head>
 <body>
 
-  <h1>Color Pop</h1>
-  <p>A color-matching game for iOS.</p>
+  <div class="cp-hero">
+    <!-- Balloons: same body/gloss/knot/string geometry as the app's BalloonIcon.swift,
+         colored from PaintColor.swift's palette. -->
+    <svg class="cp-balloon" style="left:5%; top:12%; width:48px; animation-delay:0s;" viewBox="0 0 100 160">
+      <ellipse cx="50" cy="49.6" rx="42.5" ry="49.6" fill="#ED2E2E" stroke="#B22323" stroke-width="2.4"/>
+      <ellipse cx="28.75" cy="18.85" rx="12.75" ry="10.91" fill="#fff" opacity="0.4"/>
+      <polygon points="38.1,98.2 61.9,98.2 50,112.6" fill="#ED2E2E" stroke="#B22323" stroke-width="1.5"/>
+      <path d="M50,112.6 Q55,124.45 44,160" stroke="rgba(255,255,255,0.5)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    </svg>
+    <svg class="cp-balloon" style="left:80%; top:6%; width:56px; animation-delay:1.2s;" viewBox="0 0 100 160">
+      <ellipse cx="50" cy="49.6" rx="42.5" ry="49.6" fill="#FAD11A" stroke="#BC9D14" stroke-width="2.4"/>
+      <ellipse cx="28.75" cy="18.85" rx="12.75" ry="10.91" fill="#fff" opacity="0.4"/>
+      <polygon points="38.1,98.2 61.9,98.2 50,112.6" fill="#FAD11A" stroke="#BC9D14" stroke-width="1.5"/>
+      <path d="M50,112.6 Q55,124.45 44,160" stroke="rgba(255,255,255,0.5)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    </svg>
+    <svg class="cp-balloon" style="left:88%; top:42%; width:40px; animation-delay:2.4s;" viewBox="0 0 100 160">
+      <ellipse cx="50" cy="49.6" rx="42.5" ry="49.6" fill="#215EDE" stroke="#1947A7" stroke-width="2.4"/>
+      <ellipse cx="28.75" cy="18.85" rx="12.75" ry="10.91" fill="#fff" opacity="0.4"/>
+      <polygon points="38.1,98.2 61.9,98.2 50,112.6" fill="#215EDE" stroke="#1947A7" stroke-width="1.5"/>
+      <path d="M50,112.6 Q55,124.45 44,160" stroke="rgba(255,255,255,0.5)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    </svg>
+    <svg class="cp-balloon" style="left:10%; top:48%; width:36px; animation-delay:0.6s;" viewBox="0 0 100 160">
+      <ellipse cx="50" cy="49.6" rx="42.5" ry="49.6" fill="#9426BF" stroke="#6F1D8F" stroke-width="2.4"/>
+      <ellipse cx="28.75" cy="18.85" rx="12.75" ry="10.91" fill="#fff" opacity="0.4"/>
+      <polygon points="38.1,98.2 61.9,98.2 50,112.6" fill="#9426BF" stroke="#6F1D8F" stroke-width="1.5"/>
+      <path d="M50,112.6 Q55,124.45 44,160" stroke="rgba(255,255,255,0.5)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    </svg>
+    <svg class="cp-balloon" style="left:20%; top:2%; width:30px; animation-delay:1.8s;" viewBox="0 0 100 160">
+      <ellipse cx="50" cy="49.6" rx="42.5" ry="49.6" fill="#2EB838" stroke="#238A2A" stroke-width="2.4"/>
+      <ellipse cx="28.75" cy="18.85" rx="12.75" ry="10.91" fill="#fff" opacity="0.4"/>
+      <polygon points="38.1,98.2 61.9,98.2 50,112.6" fill="#2EB838" stroke="#238A2A" stroke-width="1.5"/>
+      <path d="M50,112.6 Q55,124.45 44,160" stroke="rgba(255,255,255,0.5)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    </svg>
 
-  <h2>Links</h2>
-  <ul>
-    <li><a href="privacy.html">Privacy Policy</a></li>
-    <li><a href="support.html">Support</a></li>
-  </ul>
+    <!-- Confetti, matching the app icon's scattered dots -->
+    <div class="cp-confetti" style="left:18%; top:66%; width:8px; height:8px; background:#FA8C0D;"></div>
+    <div class="cp-confetti" style="left:28%; top:76%; width:6px; height:6px; background:#2EB838;"></div>
+    <div class="cp-confetti" style="left:63%; top:70%; width:7px; height:7px; background:#ED2E2E;"></div>
+    <div class="cp-confetti" style="left:70%; top:82%; width:9px; height:9px; background:#FAD11A;"></div>
+    <div class="cp-confetti" style="left:42%; top:84%; width:6px; height:6px; background:#9426BF;"></div>
+    <div class="cp-confetti" style="left:92%; top:74%; width:6px; height:6px; background:#215EDE;"></div>
+    <div class="cp-confetti" style="left:8%; top:80%; width:6px; height:6px; background:#FAD11A;"></div>
+
+    <div class="cp-hero-content">
+      <img class="cp-icon" src="assets/app-icon.png" alt="Color Pop app icon">
+      <h1 class="cp-wordmark">Color Pop</h1>
+      <p class="cp-tagline">Can you mix the perfect color?</p>
+    </div>
+  </div>
+
+  <div class="cp-blurb">
+    <div class="cp-blurb-header">
+      <h2>About Color Pop</h2>
+    </div>
+    <div class="cp-blurb-body">
+      <p>Pop the right balloons, catch their paint, and mix the perfect color before time runs out! Color Pop presents you with a new target color each round and your goal is to match it. Each section introduces you to a new mechanic to learn and master.</p>
+
+      <h3>A New Challenge Every Section</h3>
+      <ul>
+        <li>Read the wind and time your pops before balloons drift out of reach</li>
+        <li>Pop balloons at the right angle to guide paint around obstacles</li>
+        <li>Swap tapping for throwing and swipe to launch darts at moving targets</li>
+        <li>React fast before balloon colors disappear or run into hazards</li>
+      </ul>
+
+      <h3>50+ Target Colors. From Simple to Complex</h3>
+      <ul>
+        <li>Every round is scored on color accuracy, earning up to 3 stars.</li>
+        <li>Chase your personal best on every level and climb the Game Center leaderboards</li>
+      </ul>
+
+      <h3>Spend Your Coins to Make it Yours</h3>
+      <ul>
+        <li>Buy powerups to give yourself an edge</li>
+        <li>Unlock new bucket designs and background themes to customize your experience</li>
+      </ul>
+
+      <p class="cp-closing">Play anywhere, anytime. Fully playable without internet. Color Pop is free to play. Optional in-game purchases are available.</p>
+    </div>
+  </div>
+
+  <div class="cp-showcase">
+    <div class="cp-shot"><img src="assets/screenshots/core.png" alt="Mix the paint to match the color" loading="lazy" width="330" height="717"></div>
+    <div class="cp-shot"><img src="assets/screenshots/precision.png" alt="Precision counts with a smaller bucket" loading="lazy" width="330" height="717"></div>
+    <div class="cp-shot"><img src="assets/screenshots/hazards.png" alt="Pop the hazards before they ruin your mix" loading="lazy" width="330" height="717"></div>
+    <div class="cp-shot"><img src="assets/screenshots/obstacles.png" alt="Thread the paint through the gaps" loading="lazy" width="330" height="717"></div>
+    <div class="cp-shot"><img src="assets/screenshots/darts.png" alt="Swipe to throw" loading="lazy" width="330" height="717"></div>
+    <div class="cp-shot"><img src="assets/screenshots/gyro.png" alt="Tilt to move the bucket" loading="lazy" width="330" height="717"></div>
+    <div class="cp-shot"><img src="assets/screenshots/two-buckets.png" alt="Two buckets, two targets" loading="lazy" width="330" height="717"></div>
+    <div class="cp-shot"><img src="assets/screenshots/themes.png" alt="Five themes to unlock" loading="lazy" width="330" height="717"></div>
+    <div class="cp-shot"><img src="assets/screenshots/results.png" alt="How close can you get?" loading="lazy" width="330" height="717"></div>
+    <div class="cp-shot"><img src="assets/screenshots/levels.png" alt="A new twist every 5 levels" loading="lazy" width="330" height="717"></div>
+  </div>
+
+  <div class="cp-links">
+    <a class="cp-btn-candy cp-btn-primary" href="https://apps.apple.com/us/app/color-pop-balloon-burst/id6787263248" target="_blank" rel="noopener">View on the App Store</a>
+    <div class="cp-btn-row">
+      <a class="cp-btn-candy cp-btn-secondary" href="support.html">Support</a>
+      <a class="cp-btn-candy cp-btn-secondary" href="privacy.html">Privacy Policy</a>
+    </div>
+  </div>
+
+  <p class="cp-footer">Color Pop: Balloon Burst &mdash; developed by Connor Woodall</p>
 
 </body>
 </html>
