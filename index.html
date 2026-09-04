@@ -4,30 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Connor Woodall</title>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      max-width: 720px;
-      margin: 48px auto;
-      padding: 0 24px;
-      color: #1a1a1a;
-      line-height: 1.7;
-    }
-    h1 { font-size: 1.8rem; margin-bottom: 4px; }
-    h2 { font-size: 1.1rem; margin-top: 36px; }
-    p, li { font-size: 0.97rem; }
-    ul { padding-left: 20px; }
-    a { color: #0070f3; }
-  </style>
+  <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 
-  <h1>Connor Woodall</h1>
+  <div class="wrap">
+    <h1>Connor Woodall</h1>
+    <p class="subtitle">iOS developer.</p>
 
-  <h2>Apps</h2>
-  <ul>
-    <li><a href="colorpop.html">Color Pop</a> — a color-matching game for iOS.</li>
-  </ul>
+    <h2 class="section-label">Apps</h2>
+    <a class="app-card" href="colorpop.html">
+      <img src="assets/app-icon.png" alt="Color Pop app icon">
+      <div class="app-meta">
+        <p class="app-name">Color Pop</p>
+        <p class="app-desc">A color-matching game for iOS.</p>
+      </div>
+      <span class="app-arrow">&rarr;</span>
+    </a>
+  </div>
+
+  <footer>
+    &copy; 2026 Connor Woodall
+  </footer>
 
 </body>
 </html>

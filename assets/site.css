@@ -1,0 +1,123 @@
+:root {
+  --ink: #1a1a1a;
+  --ink-soft: #5a5a63;
+  --paper: #ffffff;
+  --paper-soft: #f6f7f9;
+  --border: #e7e8ec;
+  --accent: #3a3a42;
+  --shadow: 0 8px 24px rgba(20, 20, 30, 0.06);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #eef0f3;
+    --ink-soft: #a7abb6;
+    --paper: #121317;
+    --paper-soft: #1a1b20;
+    --border: #2a2c33;
+    --accent: #d7d9de;
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  }
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  background-image: radial-gradient(circle at 50% 15%, var(--paper-soft), transparent 60%);
+  background-attachment: fixed;
+  line-height: 1.7;
+}
+
+.wrap {
+  flex: 1;
+  width: 100%;
+  max-width: 960px;
+  padding: clamp(64px, 14vh, 140px) clamp(24px, 8vw, 120px) 48px;
+}
+
+h1 {
+  font-size: 2.8rem;
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+
+p.subtitle {
+  margin: 0 0 52px;
+  color: var(--ink-soft);
+  font-size: 1.1rem;
+}
+
+h2.section-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  margin: 0 0 14px;
+  font-weight: 600;
+}
+
+.app-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 620px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--paper-soft);
+  text-decoration: none;
+  color: var(--ink);
+  box-shadow: var(--shadow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.app-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(20, 20, 30, 0.1);
+}
+
+.app-card img {
+  width: 64px;
+  height: 64px;
+  border-radius: 22%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+}
+
+.app-card .app-meta { flex: 1; min-width: 0; }
+
+.app-card .app-name {
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin: 0 0 2px;
+}
+
+.app-card .app-desc {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+
+.app-card .app-arrow {
+  color: var(--ink-soft);
+  font-size: 1.2rem;
+}
+
+footer {
+  width: 100%;
+  padding: 20px clamp(24px, 8vw, 120px) 32px;
+  border-top: 1px solid var(--border);
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+footer a { color: var(--ink-soft); }
