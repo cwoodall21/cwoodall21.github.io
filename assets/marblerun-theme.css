@@ -1,0 +1,282 @@
+/* Marble Run's pages. Sizes are the game's UI units (UiKit.cs) times --u. Light only: the tan table is the brand. */
+
+@font-face {
+  font-family: "Nunito";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url("fonts/Nunito-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+  src: url("fonts/Nunito-ExtraBold.ttf") format("truetype");
+}
+
+:root {
+  --u: 0.42px;
+
+  --table: #eacb9d;
+  --charcoal: #3d3530;
+  --charcoal-edge: #2c2521;
+  --grey: #4a423d;
+  --grey-muted: #8c8278;
+  --surface: #ffffff;
+  --surface-line: #dbd4c9;
+  --bevel: #d9cfbf;
+  --coin: #c9a14d;
+}
+
+@media (max-width: 640px) {
+  :root { --u: 0.36px; }
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--table); }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 600;
+  color: var(--grey);
+  line-height: 1.7;
+  background: transparent;
+}
+
+/* Cropped from the left first so narrower windows keep the marble. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: url("marblerun/track-wide.jpg") 70% bottom / cover no-repeat, var(--table);
+}
+
+@media (max-aspect-ratio: 4/5) {
+  body::before {
+    background: url("marblerun/track-tall.jpg") center bottom / cover no-repeat, var(--table);
+  }
+}
+
+a { color: var(--charcoal); text-underline-offset: 3px; }
+a:hover { color: #000; }
+a:focus-visible { outline: 3px solid var(--coin); outline-offset: 3px; border-radius: 8px; }
+
+.mr-hero {
+  padding: 56px 24px 36px;
+  text-align: center;
+}
+
+.mr-icon {
+  width: 104px;
+  height: 104px;
+  border-radius: 22%;
+  display: block;
+  margin: 0 auto 22px;
+  box-shadow: 0 0 0 1px rgba(61, 53, 48, 0.08), 0 8px 20px rgba(61, 53, 48, 0.22);
+}
+
+.mr-wordmark {
+  margin: 0;
+  font-weight: 800;
+  font-size: calc(138 * var(--u) * 1.1);
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+  color: #fff;
+  -webkit-text-stroke: 0.08em var(--charcoal);
+  paint-order: stroke fill;
+  text-shadow: 0 0.11em 0 var(--charcoal);
+}
+
+.mr-tagline {
+  display: inline-block;
+  margin: calc(30 * var(--u)) 0 0;
+  padding: calc(10 * var(--u)) calc(40 * var(--u)) calc(12 * var(--u));
+  border-radius: calc(40 * var(--u));
+  background: var(--charcoal);
+  color: #fff;
+  font-weight: 600;
+  font-size: calc(46 * var(--u));
+  letter-spacing: calc(14 * var(--u));
+  text-transform: uppercase;
+}
+
+.mr-card {
+  background: var(--surface);
+  border-radius: calc(52 * var(--u));
+  border-bottom: calc(10 * var(--u)) solid var(--bevel);
+  padding: calc(64 * var(--u)) calc(60 * var(--u));
+}
+
+.mr-card-title {
+  margin: 0;
+  text-align: center;
+  font-weight: 800;
+  font-size: calc(60 * var(--u));
+  letter-spacing: calc(1 * var(--u));
+  color: var(--grey);
+  line-height: 1.3;
+}
+
+.mr-blurb {
+  max-width: 660px;
+  width: calc(100% - 32px);
+  margin: 0 auto;
+}
+
+.mr-blurb .mr-card-body {
+  margin-top: calc(36 * var(--u));
+  text-align: center;
+  font-size: calc(38 * var(--u));
+  color: var(--grey-muted);
+}
+
+.mr-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px auto 8px;
+  padding: 0 16px;
+}
+
+.mr-play {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  background: var(--charcoal);
+  border-radius: calc(70 * var(--u));
+  border-bottom: calc(12 * var(--u)) solid var(--charcoal-edge);
+  padding: calc(30 * var(--u)) calc(160 * var(--u)) calc(34 * var(--u));
+  color: #fff;
+  transition: transform 0.08s ease;
+}
+
+.mr-play:hover { color: #fff; }
+.mr-play:active { transform: translateY(calc(6 * var(--u))); }
+
+.mr-play-word {
+  font-weight: 800;
+  font-size: calc(84 * var(--u));
+  letter-spacing: calc(2 * var(--u));
+  line-height: 1.2;
+}
+
+.mr-play-sub {
+  font-weight: 600;
+  font-size: calc(32 * var(--u));
+  letter-spacing: calc(6 * var(--u));
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.4;
+}
+
+.mr-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: calc(24 * var(--u));
+  margin-top: calc(48 * var(--u));
+}
+
+.mr-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(16 * var(--u));
+  background: var(--surface);
+  border-radius: calc(48 * var(--u));
+  border-bottom: calc(8 * var(--u)) solid var(--bevel);
+  padding: calc(26 * var(--u)) calc(48 * var(--u)) calc(28 * var(--u)) calc(40 * var(--u));
+  color: var(--grey);
+  font-weight: 800;
+  font-size: calc(40 * var(--u));
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.08s ease;
+}
+
+.mr-pill:hover { color: var(--charcoal); }
+
+/* A white pill vanishes on a white card, so there it gets the game's in-card outline (UiKit.SecondaryButton). */
+.mr-card .mr-pill { border: calc(3 * var(--u)) solid var(--surface-line); border-bottom: calc(8 * var(--u)) solid var(--bevel); }
+.mr-pill:active { transform: translateY(calc(4 * var(--u))); }
+.mr-pill img { width: calc(56 * var(--u)); height: calc(56 * var(--u)); display: block; }
+
+.mr-round {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(120 * var(--u));
+  height: calc(120 * var(--u));
+  border-radius: 50%;
+  background: var(--surface);
+  border-bottom: calc(8 * var(--u)) solid var(--bevel);
+  transition: transform 0.08s ease;
+}
+
+.mr-round:active { transform: translateY(calc(4 * var(--u))); }
+.mr-round img { width: calc(120 * 0.44 * var(--u)); height: calc(120 * 0.44 * var(--u)); display: block; }
+
+.mr-page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 28px 16px 48px;
+}
+
+.mr-page-top { margin-bottom: 20px; }
+
+.mr-text { text-align: left; }
+.mr-text .mr-card-title { margin-bottom: 4px; }
+
+.mr-meta { text-align: center; color: var(--grey-muted); font-size: 0.92rem; margin: 0 0 24px; }
+
+.mr-text h2 { font-size: 1.15rem; font-weight: 800; color: var(--charcoal); margin: 30px 0 8px; }
+.mr-text p, .mr-text li { font-size: 0.98rem; }
+.mr-text ul { padding-left: 20px; }
+.mr-text li { margin-bottom: 6px; }
+.mr-text li::marker { color: var(--coin); }
+
+.mr-table-wrap { overflow-x: auto; }
+.mr-text table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
+.mr-text th, .mr-text td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--surface-line); vertical-align: top; }
+.mr-text th { font-weight: 800; color: var(--charcoal); }
+
+.mr-callout {
+  background: #faf5ec;
+  border: 1px solid var(--surface-line);
+  border-radius: 16px;
+  padding: 14px 18px;
+  margin: 16px 0;
+}
+
+.mr-inline-action { margin: 4px 0 18px; }
+
+@media (max-width: 640px) {
+  .mr-card { padding: 22px 18px; }
+}
+
+.mr-placeholder {
+  background: #fff3c4;
+  border-radius: 6px;
+  padding: 0 4px;
+}
+
+/* The game's caption style (UiKit.Outlined), so it reads over the track. */
+.mr-footer {
+  text-align: center;
+  color: var(--grey);
+  font-weight: 800;
+  font-size: 0.92rem;
+  padding: 24px 24px 40px;
+  -webkit-text-stroke: 0.3em #fff;
+  paint-order: stroke fill;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+}
+
+.mr-footer a { color: inherit; }
