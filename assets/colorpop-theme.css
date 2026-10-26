@@ -106,7 +106,7 @@ a:hover { color: var(--accent-dark); }
 /* ---------- Page row (privacy.html, support.html) ----------
    "Back" button and the white content card sit side by side (an hstack),
    the button pinned toward the left edge and the card centered in the
-   remaining space — not stacked on top of one another. No separate colored
+   remaining space, not stacked on top of one another. No separate colored
    banner behind either: that meant a second gradient layered over the
    body's, and the two never lined up once page length varied (privacy/
    support are much taller than colorpop.html). Both just sit directly on
