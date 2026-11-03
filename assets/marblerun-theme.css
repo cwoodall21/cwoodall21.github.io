@@ -136,6 +136,60 @@ a:focus-visible { outline: 3px solid var(--coin); outline-offset: 3px; border-ra
   color: var(--grey-muted);
 }
 
+/* The description reads as one left-aligned column under the centered title. */
+.mr-blurb .mr-card-body.mr-description { text-align: left; }
+.mr-description p:first-child { margin-top: 0; }
+.mr-description p:last-child { margin-bottom: 0; }
+.mr-description h3 {
+  margin: calc(44 * var(--u)) 0 calc(8 * var(--u));
+  font-weight: 800;
+  font-size: calc(42 * var(--u));
+  color: var(--grey);
+}
+.mr-description ul { margin: 0; padding-left: 20px; }
+.mr-description li { margin-bottom: 4px; }
+.mr-description li::marker { color: var(--coin); }
+
+/* The App Store screenshots, a row that scrolls sideways; each image is the device on the table. */
+.mr-showcase {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  margin-top: 40px;
+  padding: 4px clamp(24px, 8vw, 120px) 24px;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: clamp(24px, 8vw, 120px);
+  -webkit-overflow-scrolling: touch;
+  mask-image: linear-gradient(to right, transparent, black 48px, black calc(100% - 48px), transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 48px, black calc(100% - 48px), transparent);
+}
+
+.mr-showcase::-webkit-scrollbar { height: 8px; }
+.mr-showcase::-webkit-scrollbar-track { background: transparent; }
+.mr-showcase::-webkit-scrollbar-thumb { background: var(--coin); border-radius: 999px; }
+
+/* Each screenshot on a white card like the game's, so its own tan table doesn't run into the page's. */
+.mr-shot {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  background: var(--surface);
+  padding: 10px;
+  border-radius: 24px;
+  border-bottom: calc(10 * var(--u)) solid var(--bevel);
+}
+
+.mr-shot img {
+  height: 440px;
+  width: auto;
+  max-width: none;
+  border-radius: 16px;
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .mr-shot img { height: 340px; }
+}
+
 .mr-links {
   display: flex;
   flex-direction: column;
