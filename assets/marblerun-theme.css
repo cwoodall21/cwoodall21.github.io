@@ -198,6 +198,13 @@ a:focus-visible { outline: 3px solid var(--coin); outline-offset: 3px; border-ra
   padding: 0 16px;
 }
 
+.mr-store-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: calc(30 * var(--u));
+}
+
 .mr-play {
   display: inline-flex;
   flex-direction: column;
